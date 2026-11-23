@@ -1,0 +1,55 @@
+body {
+  font-family: Verdana, sans-serif;
+  background: #fdf2f8;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+header {
+  background: #9d174d;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.caja {
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+button {
+  background: #9d174d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-top: 8px;
+}
+
+select {
+  padding: 8px;
+  width: 100%;
+}
+
+.etiqueta {
+  padding: 6px;
+  border-radius: 6px;
+  color: white;
+  text-align: center;
+}
+
+.verde {
+  background: green;
+}
+
+.naranja {
+  background: darkorange;
+}
+
+[hidden] {
+  display: none;
+}

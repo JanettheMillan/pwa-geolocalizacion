@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check-in de Asistencia</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+</head>
+<body>
+  <header>
+    <h1>Check-in de Asistencia</h1>
+    <p>Janetthe Millán</p>
+  </header>
+
+  <section class="caja">
+    <p id="estado">Aún no registras tu asistencia.</p>
+    <button id="btn-ubicacion">Adjuntar mi ubicación</button>
+  </section>
+
+  <!-- Explicación antes de que el navegador pida el permiso -->
+  <section id="explicacion" class="caja" hidden>
+    <h2>¿Por qué pedimos tu ubicación?</h2>
+    <p>Para comprobar que estás en el campus al registrar tu asistencia. Tus coordenadas solo se muestran aquí y no se guardan en ningún servidor.</p>
+    <button id="btn-permitir">Sí, usar mi ubicación</button>
+  </section>
+
+  <!-- Coordenadas obtenidas -->
+  <section id="datos" class="caja" hidden>
+    <h2>Tu ubicación</h2>
+    <p>Latitud: <b id="dato-lat"></b></p>
+    <p>Longitud: <b id="dato-lng"></b></p>
+    <p>Margen de error: <b id="dato-precision"></b> m</p>
+    <p id="calidad"></p>
+  </section>
+
+  <!-- Plan B: elegir el campus a mano -->
+  <section id="manual" class="caja" hidden>
+    <h2>Registro manual</h2>
+    <p id="como-reactivar" hidden>Tu permiso está bloqueado. Para activarlo: toca el candado de la barra de direcciones → Ubicación → Permitir. En iPhone: Ajustes → Privacidad → Localización.</p>
+    <select id="lista-campus">
+      <option value="">Elige tu campus</option>
+      <option value="Campus Central">Campus Central</option>
+      <option value="Campus Norte">Campus Norte</option>
+      <option value="Campus Sur">Campus Sur</option>
+      <option value="Biblioteca">Biblioteca</option>
+    </select>
+    <button id="btn-manual">Registrar asistencia</button>
+  </section>
+
+  <!-- Primero el helper, después app.js que lo usa -->
+  <script src="./geo-helper.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
